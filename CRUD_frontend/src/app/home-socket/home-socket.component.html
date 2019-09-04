@@ -1,0 +1,38 @@
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" >  
+
+    <h1> List of users </h1> 
+
+    <table class="table1" border="6"> 
+        <tr>
+            <td><b> User Id </b></td>
+            <td><b> Name </b></td>
+        </tr>
+        <tr  *ngFor="let user of all_users" name="all_users" >
+            <td> {{user.id}} </td>
+            <td> {{user.name}}  </td>
+        </tr>
+    </table> <br>
+</div><br><br>
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px" >  
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="70px" >  
+
+        <button (click)="Add()" class="button" > Add </button>
+        <button (click)="update_email()" class="button" > Update </button>
+        <button (click)="del_user()" class="button" > Delete </button>
+    </div>
+
+    <div *ngIf="add==1 || del==1">
+        Enter Name : <input [(ngModel)]="username" type="text" name="username" />
+    </div> 
+
+    <div *ngIf="update==1" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+       <div> Enter Old Name : <input [(ngModel)]="oldname" type="text" name="oldname" /> </div>
+       <div> Enter New Name : <input [(ngModel)]="newname" type="text" name="newname" /> </div>
+    </div> 
+
+    <button *ngIf="add==1 || del==1 || update==1" class="button" (click)="save()" > 
+    <div class="button_text" > Ok </div> </button>
+</div>

@@ -1,0 +1,27 @@
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 4px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+td{
+    width: 110px;
+}  
+.table1{
+text-align: center;
+}
+
+.button{
+    color: #FFFFFF;
+    height: 30px;
+    width: 80px;
+    border-radius: 17.5px;
+    background-color: #4A90E2;
+    cursor: pointer;
+
+    .button_text{
+        font-size: 17px;
+    }
+}
